@@ -1,12 +1,11 @@
-package giese.std.Riwi.services;
+package giese.std.riwi.services;
 
-import giese.std.Riwi.models.user.CreateUserRequest;
-import giese.std.Riwi.models.user.User;
-import giese.std.Riwi.repositories.UserRepository;
+import giese.std.riwi.models.user.CreateUserRequest;
+import giese.std.riwi.models.user.User;
+import giese.std.riwi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,9 +15,9 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
     public User createUser(CreateUserRequest newUserRequest) {
-        User newUser = User.createUser(newUserRequest.email, newUserRequest.password);
-        UUID uuid = newUser.getId();
-        logger.log(Level.INFO, "User "+newUserRequest.email+" created with UUID: "+uuid);
+        String userEmail = newUserRequest.email.toLowerCase();
+        User newUser = User.createUser(userEmail, newUserRequest.password);
+        logger.log(Level.INFO, "User "+newUserRequest.email+" created with email: "+userEmail);
         userRepository.save(newUser);
         return newUser;
     }

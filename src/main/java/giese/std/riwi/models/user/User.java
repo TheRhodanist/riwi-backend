@@ -1,13 +1,16 @@
-package giese.std.Riwi.models.user;
+package giese.std.riwi.models.user;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 import java.util.UUID;
+
 @Entity
 @Table(name = "users")
+@Data
 public class User {
 
 
@@ -15,6 +18,7 @@ public class User {
     @Column(name = "user_id", updatable = false, nullable = false)
     private UUID id;
     private String email;
+    @Column(nullable = false)
     private String password;
 
     public User() {
@@ -28,29 +32,8 @@ public class User {
     }
 
     public static User createUser(String email, String password) {
-        return new User(UUID.randomUUID(), email, password);
-    }
-    public UUID getId() {
-        return id;
+        UUID newId = UUID.randomUUID();
+        return new User(newId, email, password);
     }
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

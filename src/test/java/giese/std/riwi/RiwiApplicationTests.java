@@ -1,4 +1,4 @@
-package giese.std.Riwi;
+package giese.std.riwi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

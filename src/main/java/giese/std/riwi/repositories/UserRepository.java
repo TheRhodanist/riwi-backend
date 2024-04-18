@@ -1,6 +1,6 @@
-package giese.std.Riwi.repositories;
+package giese.std.riwi.repositories;
 
-import giese.std.Riwi.models.user.User;
+import giese.std.riwi.models.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

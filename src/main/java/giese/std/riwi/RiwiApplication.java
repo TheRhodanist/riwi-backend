@@ -1,4 +1,4 @@
-package giese.std.Riwi;
+package giese.std.riwi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package giese.std.Riwi.models.user;
+package giese.std.riwi.models.user;
 
 public class CreateUserRequest {
     public String email;
